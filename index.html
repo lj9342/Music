@@ -9,15 +9,29 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('your-background-image.jpg') center/cover no-repeat; /* Replace with your image URL */
+            background: linear-gradient(to bottom, #800080, #4B0082); /* Purple gradient */
             color: #fff;
         }
 
         header {
-            background-color: #800080; /* Purple */
+            background: linear-gradient(to right, #800080, #4B0082); /* Purple gradient */
             padding: 20px;
             text-align: center;
             color: #fff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #800080; /* Purple */
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
         }
 
         main {
@@ -33,13 +47,26 @@
         }
 
         footer {
-            background-color: #800080; /* Purple */
+            background: linear-gradient(to right, #800080, #4B0082); /* Purple gradient */
             padding: 20px;
             text-align: center;
             color: #fff;
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+
+        #backToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #800080; /* Purple */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -48,6 +75,13 @@
     <header>
         <h1>Ultimate Jams for 6th Graders</h1>
     </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#songs">Songs</a>
+        <a href="#about">About</a>
+        <!-- Add more navigation links as needed -->
+    </nav>
 
     <main>
         <div class="song">
@@ -86,5 +120,15 @@
         <p>2023 Ultimate Jams for 6th Graders. All rights reserved. Created by Layane Jawad with assistance from Oskar.</p>
     </footer>
 
-</body>
-</html>
+    <button id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
+
+    <script>
+        // Back to Top Button Functionality
+        window.onscroll = function() { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("backToTopBtn").style.display = "block";
+            } else {
+                document.getElementById("back
+

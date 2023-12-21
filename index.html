@@ -1,40 +1,55 @@
-king<html>
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<style>
-body{background: rgb(255,193,222);
-background: radial-gradient(circle, rgba(255,193,222,1) 0%, rgba(235,244,255,1) 100%);
-}
-
-.content {
-  max-width: 250px;
-  margin: auto;
-}
-
- <p1>hrdfbgdyu<p1>
-
-</style>
-
-
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Music Website</title>
 </head>
 <body>
-
-
-<div class="content">
-<h1>musicsite</h1>
-<p>Let me guess you came into this wibsite beacuse you're either my teacher checking my work or you are someone looking for the right music if you are looking for music you are in the right place</p>
-</div>
-<img src=https://cdn.pixabay.com/photo/2016/03/23/20/49/music-note-1275650_640.png>  
+    <header>
+        <h1>My Music Website</h1>
+    </header>
+    <main>
+        <div id="music-list"></div>
+    </main>
+    <script src="script.js"></script>
 </body>
-
-
-
-
-
-
-
-
-
-
 </html>
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+main {
+    padding: 2em;
+}
+
+/* Add more styles as needed */
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const musicList = document.getElementById('music-list');
+    // Fetch music data and populate the musicList
+    fetch('/api/music')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(song => {
+                const songElement = document.createElement('div');
+                songElement.innerHTML = `<strong>${song.title}</strong> - ${song.artist}`;
+                musicList.appendChild(songElement);
+            });
+        })
+        .catch(error => console.error('Error fetching music data:', error));
+});
+
+

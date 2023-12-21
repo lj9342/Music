@@ -1,55 +1,90 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Music Website</title>
+    <title>Ultimate Jams for 6th Graders</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('your-background-image.jpg') center/cover no-repeat; /* Replace with your image URL */
+            color: #fff;
+        }
+
+        header {
+            background-color: #800080; /* Purple */
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        .song {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #800080; /* Purple */
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>My Music Website</h1>
+        <h1>Ultimate Jams for 6th Graders</h1>
     </header>
+
     <main>
-        <div id="music-list"></div>
+        <div class="song">
+            <h2>"Counting Stars" by OneRepublic</h2>
+            <p>Release Year: 2013</p>
+            <p>Genre: Pop/Rock</p>
+            <p>Fun Fact: Chart-topping single known for its catchy melody</p>
+        </div>
+
+        <div class="song">
+            <h2>"Believer" by Imagine Dragons</h2>
+            <p>Release Year: 2017</p>
+            <p>Genre: Pop/Rock</p>
+            <p>Fun Fact: Empowering anthem with a powerful chorus</p>
+        </div>
+
+        <div class="song">
+            <h2>"Shut Up and Dance" by WALK THE MOON</h2>
+            <p>Release Year: 2014</p>
+            <p>Genre: Indie Pop</p>
+            <p>Fun Fact: Upbeat and danceable song with a feel-good vibe</p>
+        </div>
+
+        <div class="song">
+            <h2>"Shape of You" by Ed Sheeran</h2>
+            <p>Release Year: 2017</p>
+            <p>Genre: Pop</p>
+            <p>Fun Fact: One of the best-selling digital singles of all time</p>
+        </div>
+
+        <!-- Add more 6th grader-friendly songs as needed -->
+
     </main>
-    <script src="script.js"></script>
+
+    <footer>
+        <p>2023 Ultimate Jams for 6th Graders. All rights reserved. Created by Layane Jawad with assistance from Oskar.</p>
+    </footer>
+
 </body>
 </html>
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-}
-
-main {
-    padding: 2em;
-}
-
-/* Add more styles as needed */
-// script.js
-document.addEventListener('DOMContentLoaded', () => {
-    const musicList = document.getElementById('music-list');
-    // Fetch music data and populate the musicList
-    fetch('/api/music')
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(song => {
-                const songElement = document.createElement('div');
-                songElement.innerHTML = `<strong>${song.title}</strong> - ${song.artist}`;
-                musicList.appendChild(songElement);
-            });
-        })
-        .catch(error => console.error('Error fetching music data:', error));
-});
-
-

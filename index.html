@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,17 +14,16 @@
             color: #fff;
         }
 
-        header {
+        header, footer, nav {
             background: linear-gradient(to right, #800080, #4B0082); /* Purple gradient */
+            color: #fff;
             padding: 20px;
             text-align: center;
-            color: #fff;
         }
 
         nav {
             display: flex;
             justify-content: center;
-            background-color: #800080; /* Purple */
             padding: 10px;
         }
 
@@ -46,16 +46,6 @@
             border-radius: 10px;
         }
 
-        footer {
-            background: linear-gradient(to right, #800080, #4B0082); /* Purple gradient */
-            padding: 20px;
-            text-align: center;
-            color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
         #backToTopBtn {
             display: none;
             position: fixed;
@@ -70,6 +60,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -114,6 +105,37 @@
 
         <!-- Add more 6th grader-friendly songs as needed -->
 
+        <!-- Add more content to make the page longer -->
+        <div class="song">
+            <h2>"Happy" by Pharrell Williams</h2>
+            <p>Release Year: 2013</p>
+            <p>Genre: Pop</p>
+            <p>Fun Fact: Featured in the animated film "Despicable Me 2"</p>
+        </div>
+
+        <div class="song">
+            <h2>"Uptown Funk" by Mark Ronson ft. Bruno Mars</h2>
+            <p>Release Year: 2014</p>
+            <p>Genre: Funk/Pop</p>
+            <p>Fun Fact: Grammy Award-winning hit with a catchy retro feel</p>
+        </div>
+
+        <div class="song">
+            <h2>"Can't Stop the Feeling!" by Justin Timberlake</h2>
+            <p>Release Year: 2016</p>
+            <p>Genre: Pop/Funk</p>
+            <p>Fun Fact: Featured in the animated film "Trolls"</p>
+        </div>
+
+        <div class="song">
+            <h2>"Roar" by Katy Perry</h2>
+            <p>Release Year: 2013</p>
+            <p>Genre: Pop/Rock</p>
+            <p>Fun Fact: Empowering anthem with a powerful chorus</p>
+        </div>
+
+        <!-- Add even more content as needed -->
+
     </main>
 
     <footer>
@@ -124,11 +146,21 @@
 
     <script>
         // Back to Top Button Functionality
-        window.onscroll = function() { scrollFunction() };
-
-        function scrollFunction() {
+        window.addEventListener('scroll', function () {
+            var button = document.getElementById("backToTopBtn");
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("backToTopBtn").style.display = "block";
+                button.style.display = "block";
             } else {
-                document.getElementById("back
+                button.style.display = "none";
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+
+</html>
 
